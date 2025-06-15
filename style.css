@@ -1,4 +1,3 @@
-
 /* Existing CSS preserved */
 body {
   font-family: Arial, sans-serif;
@@ -394,5 +393,149 @@ body {
   }
 }
 
-/* Optional: animate each section with slight delay */
-/* All @media queries have been removed to force desktop view on mobile */
+/* RESPONSIVE DESIGN - ADDED/ADJUSTED MEDIA QUERIES */
+
+/* For screens smaller than 768px (common tablet portrait and larger phones) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack header items */
+    padding: 15px;
+    text-align: center;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  header nav a {
+    margin: 0 10px; /* Adjust spacing for navigation links */
+    font-size: 0.9rem;
+  }
+
+  #home {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .dynamic-roles {
+    font-size: 1.2rem;
+  }
+
+  .resume-download a {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 30px 15px; /* Reduce section padding */
+    margin: 50px auto; /* Adjust section margin */
+  }
+
+  .skills-icons {
+    gap: 15px; /* Reduce gap between skill icons */
+  }
+
+  .skills-icons .skill-card {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skills-icons i {
+    font-size: 2.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack projects in a single column */
+    max-width: 400px; /* Limit width for single column */
+  }
+
+  .project-card {
+    min-width: unset; /* Remove min-width constraint */
+    max-width: 100%; /* Allow project card to take full width */
+  }
+
+  .hobbies-container {
+    gap: 20px; /* Adjust hobby card spacing */
+  }
+
+  .hobby-card {
+    width: 120px; /* Adjust hobby card width */
+    padding: 15px;
+  }
+
+  .hobby-card i {
+    font-size: 2rem;
+  }
+
+  .contact-icons {
+    flex-direction: column; /* Stack contact icons */
+    gap: 15px;
+    align-items: center;
+  }
+
+  footer {
+    padding: 10px 15px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .footer-center {
+    margin-top: 10px;
+  }
+}
+
+/* For smaller screens like mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 0.9rem;
+  }
+
+  header nav a {
+    margin: 0 5px;
+    font-size: 0.8rem;
+  }
+
+  #home {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .dynamic-roles {
+    font-size: 1rem;
+  }
+
+  .skills-icons .skill-card {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skills-icons i {
+    font-size: 2rem;
+  }
+  .skill-card img { /* Adjust image size for smaller screens if needed */
+    height: 40px !important;
+  }
+
+  .hobby-card {
+    width: 100px;
+    padding: 10px;
+  }
+
+  .hobby-card i {
+    font-size: 1.8rem;
+  }
+
+  .contact-icons a {
+    font-size: 1rem;
+  }
+}
