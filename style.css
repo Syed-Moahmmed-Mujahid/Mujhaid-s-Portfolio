@@ -36,7 +36,7 @@ header nav a {
   position: relative;
   margin-left: 20px;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.751);
+  color: black;
   font-weight: lighter;
   transition: color 0.3s;
 }
