@@ -21,15 +21,53 @@ function eraseRole() {
   }
 }
 
+// Fullscreen profile image functionality
+function initializeFullscreenImage() {
+  const profileImage = document.getElementById('profileImage');
+  const fullscreenModal = document.getElementById('fullscreenModal');
+  const closeBtn = document.getElementById('closeBtn');
+
+  // Open fullscreen when profile image is clicked
+  profileImage.addEventListener('click', () => {
+    fullscreenModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  });
+
+  // Close fullscreen when close button is clicked
+  closeBtn.addEventListener('click', () => {
+    fullscreenModal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  });
+
+  // Close fullscreen when clicking outside the image
+  fullscreenModal.addEventListener('click', (e) => {
+    if (e.target === fullscreenModal) {
+      fullscreenModal.classList.remove('active');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+  });
+
+  // Close fullscreen with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && fullscreenModal.classList.contains('active')) {
+      fullscreenModal.classList.remove('active');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // ✅ Scroll to top only if page is reloaded
   if (performance.navigation.type === 1) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Typing effect
+  // Initialize typing effect
   roleEl = document.getElementById("dynamicRoles");
   if (roleEl) typeRole();
+
+  // Initialize fullscreen image functionality
+  initializeFullscreenImage();
 
   // Read More Toggle
   document.querySelectorAll('.toggle-btn').forEach(btn => {
